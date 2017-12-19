@@ -1,3 +1,12 @@
+
 h1{
-    color: green;
+    color: white;
+    font-family: 'subway_tickerregular';
+    padding: 20px;
+    text-align: center
+    
+}
+#wrapper{
+    margin: 0 auto;
+    background: radial-gradient(rgb(28, 26, 39), rgb(76, 69, 114))
 }
