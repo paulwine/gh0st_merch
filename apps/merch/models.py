@@ -13,6 +13,7 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
 
 class Size(models.Model):
+    name = models.CharField(max_length=255)
     dimensions = models.CharField(max_length=255)
     price = models.FloatField()
 
