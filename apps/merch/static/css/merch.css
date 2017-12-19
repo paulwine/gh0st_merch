@@ -10,3 +10,21 @@ h1{
     margin: 0 auto;
     background: radial-gradient(rgb(28, 26, 39), rgb(76, 69, 114))
 }
+.heading{
+    text-align: right;
+    font-family: 'arcadeclassicregular';
+    padding: 15px;
+
+}
+    
+a{
+    text-decoration: none;
+    color: #413E61;
+    background: linear-gradient(silver, whitesmoke);
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+
+}

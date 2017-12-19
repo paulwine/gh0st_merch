@@ -7,18 +7,16 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/merch.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts/stylesheet.css' %}">
-    <title>gh0st</title>
+    <title>Login/Registration</title>
 </head>
 <body>
-    <div id = "wrapper">
-        <div class ="heading">
-            <a class = "log_reg_link" href="/login">Login</a>
-            <a class = "log_reg_link" href= "/register">Register</a>
-        </div>
-        <h1>MERCH</h1>
-            
-
-
-    </div>
+    <h2>Login</h2>
+        <form action = "/logprocess">
+            <input type="submit" value="Log In">
+        </form>
+    <h2>Register</h2>
+        <form action = "/regprocess">
+            <input type="submit" value="Register">
+        </form>
 </body>
 </html>
