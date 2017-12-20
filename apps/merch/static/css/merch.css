@@ -8,7 +8,13 @@ h1{
 }
 #wrapper{
     margin: 0 auto;
-    background: radial-gradient(rgb(28, 26, 39), rgb(76, 69, 114))
+    background: radial-gradient(rgb(28, 26, 39), rgb(76, 69, 114));
+    padding: 20px;
+}
+#wrapper_log_reg{
+    margin: 0 auto;
+    background: radial-gradient(rgb(28, 26, 39), rgb(76, 69, 114));
+    padding: 50px;
 }
 .heading{
     text-align: right;
@@ -27,4 +33,72 @@ a{
     border-radius: 5px;
     text-align: center;
 
+}
+h2{
+    font-family: 'lunchtime_doubly_soregular';
+    color: white;
+}
+.pix{
+    font-family: 'pixelregular';
+    padding: 15px;
+}
+.log_reg_box{
+    width: 200px;
+    text-align: left;
+    margin: 0 auto;
+}
+.input{
+    font-family: 'arcadeclassicregular';
+    color: rgb(176, 208, 230);
+    margin-bottom: -18px;
+}
+.log_reg_box{
+    background:radial-gradient(rgb(96, 90, 131), rgb(155, 142, 228));
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+.error{
+    background: linear-gradient(lightpink, lightcoral);
+    font-family: 'arcadeclassicregular';
+    color: red;
+    padding: 15px;
+    width: 20% 
+}
+.image_box{
+    display: inline-block;
+    background-color: white;
+    padding-top: 3px;
+    padding-right: 6px;
+    padding-left: 5px;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 2px;  
+}
+img{
+    width: 100%;
+    border: 1px solid black;
+}
+.print_section{
+    display: inline-block;
+    width: 30%;
+    margin-right: 40px; 
+}
+.name{
+    font-family: 'sf_pixelate_shadedoblique';
+    color: white
+}
+.description{
+    color: white;
+    font-family: 'subway_tickerregular';
+}
+.print_options{
+    font-family: 'arcadeclassicregular';
+    background: radial-gradient(whitesmoke, lavenderblush);
+    padding: 10px;
+    border-radius: 2px;
+}
+.center{
+    text-align: center;
 }

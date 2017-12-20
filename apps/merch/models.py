@@ -13,14 +13,14 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
 
 class Size(models.Model):
-    name = models.CharField(max_length=255)
+    size = models.CharField(max_length=255)
     dimensions = models.CharField(max_length=255)
     price = models.FloatField()
 
 class Print(models.Model):
     image_url = models.CharField(max_length = 255)
     name = models.CharField(max_length=255)
-    size = models.ForeignKey(Size,related_name = "size")
+    size = models.CharField(max_length=255)
     description = models.CharField(max_length = 255)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
@@ -31,7 +31,7 @@ class Song(models.Model):
     song_url = models.CharField(max_length = 255)
     name = models.CharField(max_length = 255)
     price = models.FloatField()
-    duration = models.DurationField()
+    duration = models.IntegerField()
     description = models.CharField(max_length = 255)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
@@ -39,7 +39,7 @@ class Song(models.Model):
 class Video(models.Model):
     video_url = models.CharField(max_length = 255)
     name = models.CharField(max_length = 255)
-    duration = models.DurationField()
+    duration = models.IntegerField()
     description = models.CharField(max_length = 255)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)

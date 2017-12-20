@@ -15,6 +15,31 @@
             <a class = "log_reg_link" href="/logout">Logout</a>
         </div>
         <h1>Main</h1>
+            <hr>
+            <h2 class ="center">prints</h2>
+                <div class = "stills">
+                    {% for pic in pics %}
+                        <div class="print_section">
+                            
+                                <p class ="name">{{pic.name}}</p>
+                                <p class ="description">{{pic.description}}</p>
+                        
+                            <div class="image_box">
+                                <img src="{% static 'images/' %}{{pic.image_url}}" alt="{{pic.image_url}}">
+                            </div> 
+                            <a class = "print_options" href="/purchase/{{pic.id}}">Print Options</a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+        <!-- <div class="videos">
+            {% for url in urls %}
+                <video class = "vid" width="500" height="500" autoplay loop>
+                    <source src= "{% static 'videos/' %}{{url}}" type="video/mp4">
+                    
+                </video>
+            {% endfor %}
+        </div> -->
     </div>
 </body>
 </html>

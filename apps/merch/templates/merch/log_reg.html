@@ -10,13 +10,35 @@
     <title>Login/Registration</title>
 </head>
 <body>
-    <h2>Login</h2>
-        <form action = "/logprocess">
-            <input type="submit" value="Log In">
-        </form>
-    <h2>Register</h2>
-        <form action = "/regprocess">
-            <input type="submit" value="Register">
-        </form>
+    <div id="wrapper_log_reg">
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        <div class="log_reg_box">
+            <h2>login</h2>
+                <form action = "/logprocess" method="post">
+                    {% csrf_token %}
+                    <p class = "input">email: </p><p> <input type="text" name="username"></p>
+                    <p class = "input">password: </p><p> <input type="password" name="password"></p>
+                    <p><input class="pix" type="submit" value="Log In"></p>
+                </form>
+        </div>
+        <div class ="log_reg_box">
+        <h2>register</h2>
+            <form action = "/regprocess" method="post">
+                {% csrf_token %}
+                <p class = "input">name: </p><p><input type="text" name="name"></p>
+                <p class = "input">username: </p><p><input type="text" name="username"></p>
+                <p class = "input">email: </p><p><input type="text" name="email"></p>
+                <p class = "input">password: </p><p><input type="password" name="password"></p>
+                <p class = "input">confirm password: </p><p><input type="password" name="confirm"></p>
+                <input class="pix" type="submit" value="Register">
+            </form>
+        </div>
+    
+    </div>
+    
 </body>
 </html>
