@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/merch.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts/stylesheet.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Shopping Cart</h1>
+        <a href="/main" class="right">Continue Shopping</a>
+            <h2>Cart</h2>
+            
+            <hr>
+            <div class="cart_all">
+                <div class="image_sect">
+                    {% for image in images %}
+                        <div class="cart_image">
+                            <img src="{% static 'images/' %}{{image.image_url}}" alt="{{image.image_url}}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="size_sect">
+                    {% for size in sizes %}
+                        <div class="price_size">
+                            <p class = "cart_font">{{size.size}} {{size.dimensions}}</p>
+                            <p class = "cart_font">{{size.price}}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                  
+            </div>
+            <div class="total"><p class="underline">TOTAL</p>{{total}}</div>  
+
+    </div>
+</body>
+</html>
