@@ -10,13 +10,14 @@ class Size(models.Model):
     dimensions = models.CharField(max_length=255)
     price = models.FloatField()
 
-
-
-class Print(models.Model):
+class Image(models.Model):
     image_url = models.CharField(max_length = 255)
     name = models.CharField(max_length=255)
-    size = models.CharField(max_length=255)
     description = models.CharField(max_length = 255)
+
+class Print(models.Model):
+    print_image = models.ForeignKey(Image, related_name="img_link")
+    print_size = models.ForeignKey(Size, related_name="size_link")
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
 
@@ -42,8 +43,7 @@ class Video(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
 
 class Cart(models.Model):
-    image = models.ManyToManyField(Print, related_name="image", default=-1)
-    image_size = models.ManyToManyField(Size, related_name="cart_img_size", default=-1)
+    print_item = models.ManyToManyField(Print, related_name="print_link")
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
 

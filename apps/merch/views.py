@@ -124,18 +124,16 @@ def regprocess(request):
 def main(request):
     active_id = request.session["active_id"]
     active_user = User.objects.get(id=active_id)
-    videos = Video.objects.all()
-    pics = Print.objects.all()
+    pics = Image.objects.all()
    
     context= {
-        "videos" : videos,
         "pics" : pics
     }
     return render(request, "merch/main.html", context)
 def purchase(request, image_id):
     active_id = request.session["active_id"]
     user = User.objects.get(id=active_id)
-    image = Print.objects.get(id=image_id)
+    image = Image.objects.get(id=image_id)
     sizes = Size.objects.all()
     context = {
         "user" : user,
@@ -147,33 +145,27 @@ def purchase(request, image_id):
 def addtocart(request, image_id):
     user_id = request.session["active_id"]
     user = User.objects.get(id=user_id)
-    image = Print.objects.get(id=image_id)
+    image = Image.objects.get(id=image_id)
     request.session["image_id"] = image_id
     print(request.POST['size'])
     size = Size.objects.get(dimensions = request.POST["size"])
+    new_print = Print.objects.create(print_image = image, print_size=size)
     cart = user.cart
-    cart.image.add(image)
-    cart.image_size.add(size)
-    cart.save()
-    user.cart = cart
-    user.save()
-
+    cart.print_item.add(new_print)
     return redirect("/shoppingcart/{}".format(user_id))
 
 def shoppingcart(request, user_id):
     user = User.objects.get(id=user_id)
     print(user.cart)
     cart =  user.cart
-    images = cart.image.all()
-    sizes = cart.image_size.all()
+
+    cart_prints = cart.print_item.all()
     total = 0
-    for size in sizes:
-        total += size.price
- 
-    print(sizes)
+    for item in cart_prints:
+        total += item.print_size.price
+    
     context = {
-        "images" : images,
-        "sizes" : sizes,
+        "cart_prints" : cart_prints,
         "total" : total
     }
 

@@ -12,31 +12,27 @@
 <body>
     <div id="wrapper">
         <h1>Shopping Cart</h1>
-        <a href="/main" class="right">Continue Shopping</a>
+        
             <h2>Cart</h2>
             
             <hr>
             <div class="cart_all">
-                <div class="image_sect">
-                    {% for image in images %}
-                        <div class="cart_image">
-                            <img src="{% static 'images/' %}{{image.image_url}}" alt="{{image.image_url}}">
-                        </div>
-                    {% endfor %}
+                {% for item in cart_prints %}
+                <div class= "item">
+                    
+                    <img class = "cart_image"src="{% static 'images/'%}{{item.print_image.image_url}}" alt="{{item.print_image.image_url}}">
+                    <p class="cart_font">{{item.print_size.dimensions}}</p>
+                    <p class="cart_font">{{item.print_size.price}}</p>
                 </div>
-                <div class="size_sect">
-                    {% for size in sizes %}
-                        <div class="price_size">
-                            <p class = "cart_font">{{size.size}} {{size.dimensions}}</p>
-                            <p class = "cart_font">{{size.price}}</p>
-                        </div>
-                    {% endfor %}
-                </div>
+                {% endfor %}
                 
                   
             </div>
-            <div class="total"><p class="underline">TOTAL</p>{{total}}</div>  
-
+            <div class="total"><p class="underline">TOTAL</p>{{total}}</div>
+        <div class="check_cont">
+            <a href="/main" class="continue">Continue Shopping</a>
+            <a href="/checkout" class="checkout">Checkout</a>
+        </div>
     </div>
 </body>
 </html>
