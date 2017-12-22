@@ -11,23 +11,33 @@
 </head>
 <body>
     <div id="wrapper">
+            <audio
+            src="http://audiosoundclips.com/wp-content/uploads/2011/12/Beat8.mp3"
+            loop
+            autoplay>
+            </audio>
         <h1 >{{image.name}}</h1>
         <div class="print_section">
             <div class="image_box">
                 <img src="{% static 'images/'%}{{image.image_url}}" alt="">
             </div>
+            
+        </div>
+        <div class="info_box">
+            <p class="info">Please select print size below to add the print to your cart.</p>
             <form action ="/addtocart/{{image.id}}" method="post">
                 {% csrf_token %}
-                <select name="size" >
+                <p class="info" >Size: 
+                <select name="size" class="selectbox">
                     {% for size in sizes %}
                         <option name = "{{size.size}}">{{size.dimensions}}</option>
                     {% endfor %}
                 </select>
                 <input type="submit" value="Add to cart" >
+                <img src="{% static 'images/shoppingcart.PNG'%}" alt="">
+            </p>
             </form>
-        </div>
-        <div class="info_box">
-            <p class="info">Please select print size below image to add the print to your cart.</p>
+
         </div>
     </div>
 </body>

@@ -7,10 +7,15 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/merch.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts/stylesheet.css' %}">
-    <title>Document</title>
+    <title>Cart</title>
 </head>
 <body>
     <div id="wrapper">
+            <audio
+            src="http://audiosoundclips.com/wp-content/uploads/2011/12/Beat5.mp3"
+            loop
+            autoplay>
+            </audio>
         <h1>Shopping Cart</h1>
         
             <h2>Cart</h2>
@@ -31,7 +36,7 @@
             <div class="total"><p class="underline">TOTAL</p>{{total}}</div>
         <div class="check_cont">
             <a href="/main" class="continue">Continue Shopping</a>
-            <a href="/checkout" class="checkout">Checkout</a>
+            <a href="/checkout/{{cart_id}}" class="checkout">Checkout</a>
         </div>
     </div>
 </body>

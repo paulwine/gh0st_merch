@@ -10,6 +10,8 @@ h1{
     margin: 0 auto;
     background: radial-gradient(rgb(28, 26, 39), rgb(76, 69, 114));
     padding: 20px;
+    height: 1000px;
+    overflow: scroll;
 }
 #wrapper_log_reg{
     margin: 0 auto;
@@ -36,6 +38,10 @@ a{
 }
 h2{
     font-family: 'lunchtime_doubly_soregular';
+    color: white;
+}
+h3{
+    font-family: 'arcadeclassicregular';
     color: white;
 }
 .pix{
@@ -172,4 +178,7 @@ img{
     font-family: 'sf_pixelate_shadedoblique';
     text-decoration: underline;
     text-decoration-color:darkcyan;
+}
+.selectbox{
+    padding: 10px;
 }

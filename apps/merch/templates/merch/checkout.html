@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/merch.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts/stylesheet.css' %}">
+    <title>Checkout</title>
+</head>
+<body>
+        <audio
+        src="http://audiosoundclips.com/wp-content/uploads/2011/12/Beat7.mp3"
+        loop
+        autoplay>
+        </audio>
+    <div id="wrapper">
+        <h1>Checkout</h1>
+        <hr>
+        <h2>Total {{total}}</h2>
+    
+    <h3>Payment Information</h3>
+    <form action="/clear_cart/{{cart_id}}" method='post'>
+        {% csrf_token %}
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key= "{{stripe_key}}"
+        data-amount= "{{stripe_total}}"
+        data-name= "gh0st"
+        data-description="Print Purchase"
+        data-image="{% static 'images/IMG_0675.JPG' %}"
+        data-currency="usd">
+    </script>
+    </form>
+    </div>
+</body>
+</html>

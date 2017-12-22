@@ -10,5 +10,9 @@ urlpatterns = [
     url(r'^purchase/(?P<image_id>\d+)$', views.purchase),
     url(r'^addtocart/(?P<image_id>\d+)$', views.addtocart),
     url(r'^shoppingcart/(?P<user_id>\d+)$', views.shoppingcart),
+    url(r'^checkout/(?P<cart_id>\d+)$', views.checkout),
+    url(r'^payment/(?P<cart_id>\d+)$', views.payment),
+    url(r'^thank_you$', views.thank_you),
+    url(r'^clear_cart/(?P<cart_id>\d+)$', views.clear_cart),
     url(r'^logout$', views.logout)
 ]

@@ -21,6 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'cwicv=46j&zx(w!dz-6t*%4%+835x62y)#l*&)wr14z!np&5=&'
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_SECRET_KEY", "pk_test_4McVubwVNED7RXvG2AE1yTNy")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_zM3n02GPFnqXbzkwCdwNEtJy")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
